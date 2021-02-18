@@ -71,7 +71,7 @@ export default {
       const winCombine = Object.keys(this.board).map(key => this.board[key] === mark);
       const isDraw = !Object.keys(this.board).find(key => this.board[key] === "")
       if (isDraw) {
-        this.reset()
+        return "draw"
       }
       return (winCombine[0] && winCombine[1] && winCombine[2]) ||
           (winCombine[3] && winCombine[4] && winCombine[5]) ||
@@ -88,7 +88,8 @@ export default {
       const status = this.checkGameStatus(this.mark);
       this.mark = this.mark === 'x' ? 'o' : 'x';
       if (status) {
-        if (this.mark === 'x') {
+        if(status==="draw"){
+        } else if (this.mark === 'x') {
           this.score.o++
         } else {
           this.score.x++
@@ -149,6 +150,7 @@ export default {
       }
       this.mark = 'x'
       this.move = 0
+      this.bot()
     }
   },
   computed: {
