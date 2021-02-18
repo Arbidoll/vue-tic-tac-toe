@@ -1,7 +1,7 @@
 <template>
-  <div class="wrapper ">
-    <GameHandler />
-  </div>
+  <v-main>
+    <GameHandler/>
+  </v-main>
 </template>
 
 <script>

@@ -1,25 +1,25 @@
 <template>
-  <div class="container">
-    <h3 class="center white-text">Tic Tac Toe</h3>
+  <v-container>
+    <h1 class="center white--text">Tic Tac Toe</h1>
     <hr/>
-    <div class="timer" id="timer">
+    <div class="timer white--text" id="timer">
       {{ timer.minutes }} : {{ timer.second }}
     </div>
-    <span v-if="players!=='1'" class="queue white-text">
+    <span v-if="players!=='1'" class="queue white--text">
       {{ mark === 'x' ? "Crosses" : "Noughts" }} turn
     </span>
-    <span v-else class="queue white-text">
+    <span v-else class="queue white--text">
       {{ botMark === mark ? "Bot" : "You" }} turn
     </span>
-    <div class="score white-text">
-      Score <span class="red-text">{{ score.x }}</span> : <span class="green-text">{{ score.o }}</span>
+    <div class="score white--text">
+      Score <span class="red--text">{{ score.x }}</span> : <span class="green--text">{{ score.o }}</span>
     </div>
     <GameBoard
         :board="board"
         :mark="mark"
         @moved="moveHandler"
     />
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -194,13 +194,8 @@ export default {
 
 <style scoped>
 
-h3 {
-  padding-top: 65px;
-}
-
 .timer {
   padding-bottom: 65px;
-  color: white;
   font-size: 20px;
 }
 

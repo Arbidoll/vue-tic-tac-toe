@@ -1,17 +1,24 @@
 <template>
-  <div id="app" class="blue-grey darken-3">
-    <nav id="nav" class="blue-grey darken-4">
-      <div class="nav-wrapper container">
-          <router-link class="left" to="/">Home</router-link>
-      </div>
-    </nav>
+  <v-app
+      app
+      :style="{background: '#37474F'}"
+  >
+    <v-app-bar
+        color="blue-grey darken-4"
+        flat
+        app
+    >
+      <v-container class="d-flex justify-start">
+        <router-link class="teal--text darken-4" to="/">
+          Home
+        </router-link>
+      </v-container>
+    </v-app-bar>
     <router-view/>
-  </div>
+  </v-app>
 </template>
 
 <style>
-@import "~materialize-css/dist/css/materialize.min.css";
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -21,13 +28,9 @@
   height: 100vh;
 }
 
-a{
+a {
   text-decoration: none;
   font-weight: bold;
   font-size: 30px;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

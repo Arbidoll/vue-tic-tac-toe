@@ -1,20 +1,20 @@
 <template>
-  <div class="container">
-    <div class="home-menu-wrapper">
-      <h1>Start new game</h1>
+  <v-main class="home-menu-wrapper">
+    <v-container>
+      <h1 class="white--text">Start new game</h1>
       <div class="new-game">
-        <router-link :to="{name: 'Game', query: { players: '2' } }">With another player</router-link>
-        <router-link :to="{name: 'Game', query: { players: '1' } }">With bot</router-link>
+        <v-btn text :to="{name: 'Game', query: { players: '2' } }">With another player</v-btn>
+        <v-btn text :to="{name: 'Game', query: { players: '1' } }">With bot</v-btn>
       </div>
       <div
           v-if="(this.oldGame.score.o!==0)||(this.oldGame.score.x!==0)||(this.oldGame.move!==0)"
-          class="load-game white-text"
+          class="load-game white--text"
       >
         Or you can
-        <router-link to="/game">load game</router-link>
+        <v-btn text to="/game">load game</v-btn>
       </div>
-    </div>
-  </div>
+    </v-container>
+  </v-main>
 </template>
 
 <script>
@@ -27,10 +27,6 @@ export default {
 </script>
 
 <style scoped>
-
-h1 {
-  color: white;
-}
 
 .home-menu-wrapper {
   margin-top: 15%;
@@ -49,7 +45,6 @@ a {
 }
 
 a:hover {
-  font-weight: bolder;
   color: #42b983;
 }
 

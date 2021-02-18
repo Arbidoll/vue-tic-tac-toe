@@ -1,20 +1,20 @@
 <template>
-  <div class="container">
-    <h1>Page not found!</h1>
-  </div>
+  <v-main>
+    <v-container>
+      <h1 class="white--text">Page not found!</h1>
+    </v-container>
+  </v-main>
 </template>
 
 <script>
 export default {
-name: "404",
+  name: "404",
   mounted() {
-    setTimeout(()=>this.$router.push("/"), 2000)
+    setTimeout(() => this.$router.push("/"), 2000)
   }
 }
 </script>
 
 <style scoped>
-  h1{
-    color: white;
-  }
+
 </style>

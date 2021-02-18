@@ -1,5 +1,5 @@
 <template>
-  <div class="game-board">
+  <v-card outlined class="d-flex blue-grey darken-3 justify-center">
     <div class="game-board-area blue-grey lighten-2" @click="boardHandler">
       <div
           class="game-board-cell"
@@ -11,7 +11,7 @@
         {{ item }}
       </div>
     </div>
-  </div>
+  </v-card>
 </template>
 
 <script>
@@ -39,11 +39,6 @@ export default {
 </script>
 
 <style scoped>
-
-.game-board {
-  display: flex;
-  justify-content: center;
-}
 
 .game-board-area {
   display: grid;
